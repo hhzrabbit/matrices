@@ -1,0 +1,4 @@
+import matrix
+
+m = new_matrix(3, 4)
+print (m)
