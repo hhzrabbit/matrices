@@ -31,6 +31,10 @@ def scalar_mult( matrix, s ):
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
     ret = new_matrix( len(m2[0]), len(m2))
+
+
+
+
     return ret
     """
  for (int i = 0; i < N; i++)
