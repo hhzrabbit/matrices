@@ -1,6 +1,5 @@
 import math
 
-
 def print_matrix( matrix ):
     if len(matrix) > 0:
         string = ""
@@ -20,25 +19,25 @@ def ident( matrix ):
                 matrix[col][row] = 1
             else:
                 matrix[col][row] = 0
-    return matrix
 
 def scalar_mult( matrix, s ):
     for col in range(len(matrix)):
         for row in range(len(matrix[0])):
             matrix[col][row] *= s
-    return matrix
             
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-    ret = new_matrix( len(m2[0]), len(m2))
-    return ret
-    """
- for (int i = 0; i < N; i++)
-        for (int j = 0; j < N; j++)
-            for (int k = 0; k < N; k++)
-                    c[i][j] += a[i][k] * b[k][j];    
+    temp = new_matrix( len(m2[0]), len(m2))
+    
+    for i in range(len(m1)):
+        for j in range(len(m2)):
+            for k in range(len(m2[0])):
+                 temp[j][i] += m1[k][i] * m2[j][k]
 
-"""
+    for col in range(len(temp)):
+        for row in range(len(temp[0])):
+            m2[col][row] = temp[col][row]
+
     
 
 def new_matrix(rows = 4, cols = 4):
